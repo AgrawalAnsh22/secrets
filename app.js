@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 const encrypt = require("mongoose-encryption");
+const md5 = require("md5");
 
 const app = express();
 
@@ -42,7 +43,7 @@ app.post("/register", function(req, res){
 
   const newUser = new User({
     email: req.body.username,
-    password: req.body.password
+    password: md5(req.body.password)
   });
 
   newUser.save(function(err){
@@ -56,7 +57,7 @@ app.post("/register", function(req, res){
 
 app.post("/login", function(req, res){
   var username = req.body.username;
-  var password = req.body.password;
+  var password = md5(req.body.password);
 
   User.findOne({email: username}, function(err, foundUser){
     if(err){
@@ -65,6 +66,8 @@ app.post("/login", function(req, res){
       if(foundUser){
         if(foundUser.password===password){
           res.render("secrets");
+        }else{
+          alert("Please enter the correct password");
         }
       }
     }
