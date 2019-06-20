@@ -8,7 +8,7 @@ Secrets is a web application where users register themselves and can submit ther
 ## Secrets page
 ![Secrets Secretpage](/public/images/secrets_secret.JPG)
 ## Submit page
-![Secrets Submitpage](/public/images/Secrets_submit.JPG)
+![Secrets Submitpage](/public/images/secrets_submit.JPG)
 
 The registration of user is encrypted using the passportjs- which is one of the most secure ways of registration.
 
