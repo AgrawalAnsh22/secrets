@@ -17,7 +17,7 @@ This project also contains various levels of authentication for login, which I h
 The levels of authentication are - <br>
 - Level 1 - Username & Password (with plain text)
 - Level 2 - Database encryption with environmental variables
-- Level 3 - U=Encryption using Hash functions
+- Level 3 - Encryption using Hash functions
 - Level 4 - Adding Salting to hash functions
 - Level 5 - Passportjs
 - Level 6 - OAuth along with passportjs
